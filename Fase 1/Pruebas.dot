@@ -1,0 +1,31 @@
+digraph G{
+label=" Lista Doble Circular Inicio-Fin ";
+node [shape=box];
+//agregando nodos
+N0[label="Segundo" ];
+N1[label="Cuarto" ];
+N2[label="Primero" ];
+N3[label="Tercero" ];
+N4[label="Septimo" ];
+N5[label="Quinto" ];
+N6[label="Sexto" ];
+
+//agregando conexiones o flechas
+{rank=same;
+N0->N1[dir=forward];
+N0->N1[dir=back];
+N1->N2[dir=forward];
+N1->N2[dir=back];
+N2->N3[dir=forward];
+N2->N3[dir=back];
+N3->N4[dir=forward];
+N3->N4[dir=back];
+N4->N5[dir=forward];
+N4->N5[dir=back];
+N5->N6[dir=forward];
+N5->N6[dir=back];
+N6->N0[dir=forward];
+N6->N0[dir=back];
+
+}
+}
