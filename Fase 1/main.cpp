@@ -1,10 +1,15 @@
 #include <iostream>
 #include <cstdlib>
 
+
+#include "helpers.cpp"
+
 using namespace std;
 
 int opcion;
-
+string dir;
+string nick, password;
+int edad;
 int main(){
 
     do{
@@ -18,19 +23,35 @@ int main(){
         cin >> opcion;
         switch(opcion){
             case 1 : 
-                cout <<"Carga masiva"<<endl;
+                cout <<"Ingrese la ruta del archivo: "<<endl;
+                cin>> dir;
+                //cout<<dir;
+                CargaMasiva(dir);
                 system("pause");
                 break;
             case 2 :
-                cout <<"Registro de usuario"<<endl;
+                cout <<"Ingrese el nick:"<<endl;
+                cin>> nick;
+                cout<<"Ingrese su contrasenia"<<endl;
+                cin>>password;
+                cout<<"Ingrese su edad"<<endl;
+                cin>>edad;
+
+                RegistroUsuario(nick,password,0,edad);
                 system("pause");
+                
                 break;
             case 3 :
-                cout <<"Login"<<endl;
+                cout <<"Ingrese su nick"<<endl;
+                cin>> nick;
+                cout <<"Ingrese su contrasenia"<<endl;
+                cin>> password;
+                Login(nick,password);
                 system("pause");
                 break;
             case 4 :
                 cout << "Reportes"<<endl;
+                Reportes();
                 system("pause");
                 break;
             default :

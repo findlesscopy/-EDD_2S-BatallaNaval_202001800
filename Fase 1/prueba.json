@@ -1,0 +1,60 @@
+{
+	"usuarios": [{
+			"nick": "findlesscopy",
+			"password": "hola123*",
+			"monedas": "10000",
+			"edad": "19"
+		},
+		{
+			"nick": "capa8",
+			"password": "kilaasdas123456*",
+			"monedas": "5000",
+			"edad": "21"
+		},
+		{
+			"nick": "thechillywilly",
+			"password": "tututuaksdja12347--1",
+			"monedas": "15000",
+			"edad": "18"
+		}
+	],
+	"articulos": [{
+			"id": "1",
+			"categoria": "Raro",
+			"precio": "150",
+			"nombre": "Palaaaaso",
+			"src": "adakljsdlasjdjkl.com"
+		},
+		{
+			"id": "DHJALD813",
+			"categoria": "Mega Raro",
+			"precio": "1500",
+			"nombre": "JUJUJUY",
+			"src": "ioqwuiowqeuioweouiewq.com"
+		},
+		{
+			"id": "QWE678",
+			"categoria": "Legendario",
+			"precio": "1800",
+			"nombre": "Porton",
+			"src": "qwjklaasdnm.es"
+		}
+	],
+	"tutorial": {
+		"ancho": "10",
+		"alto": "10",
+		"movimientos": [{
+				"x": "1",
+				"y": "1"
+			},
+			{
+				"x": "2",
+				"y": "2"
+			},
+			{
+				"x": "3",
+				"y": "3"
+			}
+		]
+	}
+}

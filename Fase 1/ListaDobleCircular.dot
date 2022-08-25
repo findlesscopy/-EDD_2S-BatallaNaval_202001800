@@ -1,0 +1,22 @@
+digraph G{
+label=" Lista Doble Circular Inicio-Fin ";
+node [shape=box];
+//agregando nodos
+N0[label="capa8
+e79b2c8c3e581003975ed92350536c5f62b1d3bb1512b22b2909898c9da9a0d2
+5000
+21" ];
+N1[label="thechillywilly
+9babc91e71332a97b7b6b8d840ebcd34ac3b74f880cc7b6da16216a5edfa2829
+15000
+18" ];
+
+//agregando conexiones o flechas
+{rank=same;
+N0->N1[dir=forward];
+N0->N1[dir=back];
+N1->N0[dir=forward];
+N1->N0[dir=back];
+
+}
+}
