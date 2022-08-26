@@ -12,6 +12,7 @@
 #include "ListaDeListas.cpp"
 #include "Cola.cpp"
 #include "ListaArticulos.cpp"
+#include "ListaDePilas.cpp"
 
 using namespace std;
 using json = nlohmann::json;
@@ -22,6 +23,7 @@ Cola cola_tutorial;
 ListaArticulos lista_articulos_ordenada;
 Usuario usuario;
 Articulo articulo;
+ListaDePilas lista_movimientos;
 
 
 int helpers() {
@@ -113,27 +115,27 @@ void RegistroUsuario(string nick, string password, int monedas, int edad){
 
     //std::cout << SHA256::toString(digest) << std::endl;
 
-    delete[] digest; // Don't forget to free the digest!
+    
 
     usuario = Usuario(nick, SHA256::toString(digest),monedas,edad); 
     lista_usuarios.Insertar(usuario);
-
+    delete[] digest; // Don't forget to free the digest!
     //lista_usuarios.ImprimirFI(); 
 }
 
 void Login(string nick, string password){
     
-    SHA256 sha;
-    sha.update(password);
-    uint8_t * digest = sha.digest();
+    SHA256 sha1;
+    sha1.update(password);
+    uint8_t * digest = sha1.digest();
 
     //std::cout << SHA256::toString(digest) << std::endl;
 
-    delete[] digest; // Don't forget to free the digest!
-
-    if(lista_usuarios.BuscarUsuarioLogin(nick, SHA256::toString(digest)) == false){
-        cout << "Login failed" << endl;
-    }else{
+     // Don't forget to free the digest!
+    
+    int movimiento_x, movimiento_y;
+    
+    if(lista_usuarios.BuscarUsuarioLogin(nick,SHA256::toString(digest))){
         int opcion;
         do{
         system("cls");
@@ -170,6 +172,13 @@ void Login(string nick, string password){
                 break;
             case 5 :
                 cout <<"Realizar movimientos"<<endl;
+                cout <<"Ingrese coordenada x del movimiento: "<<endl;
+                cin>> movimiento_x;
+                cout <<"Ingrese coordenada y del movimiento: "<<endl;
+                cin>> movimiento_y;
+
+                lista_movimientos.InsertarCabecera(nick);
+                lista_movimientos.PushPila(nick, movimiento_x, movimiento_y);
                 system("pause");
                 break;
             default :
@@ -178,7 +187,11 @@ void Login(string nick, string password){
                 break;
         }
         system("cls");
-    }while (opcion<=5);   
+    }while (opcion<=5); 
+    delete[] digest;    
+    }else{
+        
+          cout << "Login failed" << endl;
     }
 }
 
@@ -239,7 +252,7 @@ void Reportes(){
             break;
         case 8 :
             cout <<"Generando Grafica"<<endl;
-            cola_tutorial.Graficar();
+            lista_movimientos.GenerarGrafo();
             system("pause");
             break;
         default :

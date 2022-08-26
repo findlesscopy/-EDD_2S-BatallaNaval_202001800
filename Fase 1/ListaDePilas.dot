@@ -1,0 +1,27 @@
+digraph G{
+label=" Lista de Pilas ";
+node [shape=box fontsize=12 arrowsize=0.1] ;
+N1000[label="sdobble0" ];
+
+N1001[arrowsize = 1, label="7
+7" ];
+N1002[arrowsize = 1, label="5
+5" ];
+N1003[arrowsize = 1, label="3
+3" ];
+N1004[arrowsize = 1, label="1
+1" ];
+
+{rank=same;
+N1000 -> N2000;
+
+}{
+N1000 -> N1001;
+
+}{
+N1001 -> N1002;
+N1002 -> N1003;
+N1003 -> N1004;
+
+}
+}

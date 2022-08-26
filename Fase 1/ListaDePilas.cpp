@@ -65,7 +65,6 @@ void ListaDePilas::PushPila(string nick, int x, int y){
     while(temporal != NULL){
         //cout << temporal->nick << " " <<nick <<endl;
         if(temporal->nick == nick){
-            cout<<"ENTRE PUTAMAMADA\n";
             NodoPila*nueva_pila = new NodoPila();
             nueva_pila->x = x;
             nueva_pila->y = y;
@@ -196,25 +195,3 @@ void ListaDePilas::GenerarGrafo(){
     //------>abrir archivo
     system(("ListaDePilas.png"));
 }
-
-
-
-
-int main(int argc, char **argv){
-    ListaDePilas prueba;
-  
-    prueba.InsertarCabecera("Manuel");
-    prueba.InsertarCabecera("Jose");
-    prueba.InsertarCabecera("Luis");
-    prueba.InsertarCabecera("Daniel");
-    prueba.InsertarCabecera("Daniel");
-    prueba.InsertarCabecera("Mario");
-
-    prueba.PushPila("Daniel",1,1);
-    prueba.PushPila("Daniel",1,1);
-    prueba.PushPila("Mario",2,2);
-    //prueba.ImprimirCabeceras();
-    prueba.ImprimirPilas();
-    prueba.GenerarGrafo();
-};
-

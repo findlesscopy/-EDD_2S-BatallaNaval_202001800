@@ -249,6 +249,7 @@ void ListaDobleCircular::Editar(string nick, string password) {
     int nueva_edad;
     if(primero!=NULL){
         do{
+            cout<<actual->usuario.nick<<" "<<nick<<" "<<actual->usuario.password<<" "<<password<<endl;
             if(actual->usuario.nick == nick && actual->usuario.password == password){
                 //cout<<"\nNodo encontrado con los datos: "<<"Nick: "<<actual->usuario.nick<<" Password: "<<actual->usuario.password<<" Edad: "<<actual->usuario.edad<<endl;
                 cout<<"\nIngrese nuevo dato para el nick"<<endl;
@@ -262,7 +263,7 @@ void ListaDobleCircular::Editar(string nick, string password) {
 
                 //std::cout << SHA256::toString(digest) << std::endl;
 
-                delete[] digest; // Don't forget to free the digest!
+                
                 actual->usuario.password = SHA256::toString(digest);
                 cout<<"\nIngrese nuevo dato para edad"<<endl;
                 cin >> nueva_edad;
@@ -270,6 +271,7 @@ void ListaDobleCircular::Editar(string nick, string password) {
 
                 cout<<"\nDatos modificados correctamente"<<endl;
                 encontrado = true;
+                delete[] digest; // Don't forget to free the digest!
             }
             actual = actual->siguiente;
         }while(actual != primero && encontrado != true);

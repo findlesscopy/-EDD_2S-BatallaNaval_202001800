@@ -3,11 +3,11 @@
 #include <iostream>
 #include <string>
 
-#include "ListaDobleCircular.cpp"
+//#include "ListaDobleCircular.cpp"
 #include "ListaDeListas.cpp"
 #include "Cola.cpp"
+#include "ListaDePilas.cpp"
 
-#include "SHA256.cpp"
 #include <iostream>
 #include <cassert>
 #include <iomanip>
@@ -86,13 +86,19 @@ int main(int argc, char** argv) {
     std::cout <<"\n"<< nick << std::endl;
     std::cout <<data.at("usuarios").size()<< std::endl;
     */
-   Cola pruebas4;
-   pruebas4.Insertar(50,50);
-   pruebas4.Insertar(10,5);
-   pruebas4.Insertar(4,15);
-   pruebas4.Insertar(40,18);
-   pruebas4.Insertar(5,32);
-   pruebas4.Mostrar();
-   pruebas4.Peek();
-   return 0;
+    /*
+    Cola pruebas4;
+    pruebas4.Insertar(50,50);
+    pruebas4.Insertar(10,5);
+    pruebas4.Insertar(4,15);
+    pruebas4.Insertar(40,18);
+    pruebas4.Insertar(5,32);
+    pruebas4.Mostrar();
+    pruebas4.Peek();
+    return 0;*/
+    
+    ListaDePilas prueba5;
+    prueba5.InsertarEncabezado("Jose");
+    prueba5.InsertarPila("Jose",1,1);
+    return 0;
 }

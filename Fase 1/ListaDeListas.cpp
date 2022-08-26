@@ -132,8 +132,8 @@ void ListaDeListas::ImprimirArticulos(){
 bool ListaDeListas::Buscar(string categoria){
     NodoPrincipal*temporal = primero;
 
-    int count = 0, flag = 0, value;
-    
+    int count = 0, flag = 0;
+        
     if(temporal==NULL){
         return -1;
     }else{

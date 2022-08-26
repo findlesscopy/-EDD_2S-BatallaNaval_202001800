@@ -2,21 +2,609 @@ digraph G{
 label=" Lista Doble Circular Inicio-Fin ";
 node [shape=box];
 //agregando nodos
-N0[label="capa8
-e79b2c8c3e581003975ed92350536c5f62b1d3bb1512b22b2909898c9da9a0d2
-5000
-21" ];
-N1[label="thechillywilly
-9babc91e71332a97b7b6b8d840ebcd34ac3b74f880cc7b6da16216a5edfa2829
-15000
-18" ];
+N0[label="sdobble0
+62caa858b2ce7006acf77382138d2bd115bfa6c44a86fa236b740122301b15fe
+2311
+7" ];
+N1[label="shattersley1
+b03d746d4f49ab44c481e9d9e80cdcd15d3604bad15f1e11c2c19effc742af87
+273
+9" ];
+N2[label="dgatheridge2
+2acdbf0d5aa9f2d2a9b849486c5560117ad49a29b8137a20bf20c0ed755fb9ba
+3
+3" ];
+N3[label="braggatt3
+8f89b90500393f5e299d7969784aa072a35e5c112e3f151d07a5a02546e74e12
+41
+30" ];
+N4[label="ramdohr4
+0b4712f897dd23fb60a4cc4d6b7fc89862cffc24b1b02292de9078b0d3c3c144
+9595
+80" ];
+N5[label="yhealks5
+57bb8f3362d62201b46933920ffe1183f13f2d6acf82223daae92fce87b79194
+330
+7" ];
+N6[label="mparvin6
+b08d213e5b861e791a38fd87cd954f29c23b7e2d50d56b6019adf3e3313fb6ad
+9
+60" ];
+N7[label="dsuckling7
+3a1d2c08840fb59cbc165d93645642f368946b2dd9afbc2a995ef798c5050945
+65
+1" ];
+N8[label="fdrayson8
+62a311401680db5a7e68a306a3e46285f4f840b889e9310b50b097ac36d530a7
+52601
+8" ];
+N9[label="ssummerson9
+ebc2db2efc36709db12fd03f6541949643227ec1d7ef073e8e70d573316ac916
+0
+216" ];
+N10[label="ddowsinga
+34f0d01fc03907d1029e6f2833ddcbe3e84fe29e9c57e69024aecbe663156ba3
+263711
+0" ];
+N11[label="alearmouthb
+86732112cc46c2fe75d35c12241b246a34b3c9fa70c20ab8189bf39826bbbbf3
+2629
+4" ];
+N12[label="kwoodstockc
+6afa64a8b08e156047c8351f599571cd0b2907e465c6791317bd32017b5f0a06
+93962
+9" ];
+N13[label="hajeand
+8571b2ea1801cc489037cb6ced79d2dcabc8ff57de27c35c0612eb6a974cfbd4
+48
+8" ];
+N14[label="fmahere
+853771bab1729178471a29962544ca55315ccf1e47b1bd6f8f1f7524a6e8f2ab
+7303
+905" ];
+N15[label="cmcturkf
+b6750a1d856923b20dc346cb3a5d921e1f7520acca68020d2b91016e6e0bebfd
+4
+414" ];
+N16[label="tommanneyg
+4b3a343380dc51b40e00de794283d53248b55b1098ce0c81ba1f4bccc7adf0bb
+9
+96" ];
+N17[label="tmorratth
+7475fdc870a2d5f981d7f8952cafa303cbe4edf495d508339fefc9d1f33c8fce
+9
+520" ];
+N18[label="ftummondi
+049849091f4abf30d6ecde7bf7d01b9b1095e2d49efdacc6917ae597e46a22e9
+74558
+7" ];
+N19[label="mlewsiej
+f53be8a64f1ae061dc4c0d4e0b8b71c4d73dc4b77809ff1371e8d440d2119fd6
+8530
+901" ];
+N20[label="dchestersk
+811b55620c5c5dfd4328dcb1a39d9976630be4f7ac93e8b3ac54f704892cfd6c
+481
+7" ];
+N21[label="schickl
+ec9784e800050ce015bc790e530024cd7ec5123e887e8368ab47ec4b877baad2
+2299
+73" ];
+N22[label="hconeaum
+773ef6ed72f0f7fce18feb39708bdc58a01b56f958f3a6a91bc708d712a09675
+6
+36" ];
+N23[label="jpayntonn
+66b4f97eadeb70a54cf5c1c3dd69e9ba89bd6c434854de863dd949657f1c445c
+15
+293" ];
+N24[label="fgellingo
+f1e677a28776dbb859e91297e4bafacde6dce8aaf860e7e2cebebd2d309406d9
+96081
+8" ];
+N25[label="bsamettp
+27d283c0b976be1502dff9c13d62181d86be278d82833f2512971a5c37cb8605
+7
+1" ];
+N26[label="mfleckneyq
+0ee80ad2b3e0c00f7d34726c2231e2bc9f43456a20c0bf3b6ba20711e70736d7
+3176
+623" ];
+N27[label="cpetrushankor
+a37d4f2b5d507cdfccb9a701fdf0d2ba7bf274a47d71b5ffad9b1ccc2214b709
+43
+1" ];
+N28[label="qkrammers
+e8f14a986667b0ba581d37f6d7fda839794a7697393829e988b1c48915511e1c
+99551
+60" ];
+N29[label="ftriggelt
+aa88b5b7b7b69e3e378cff800d9e3c9d91eca591b8858f60e577abf17473f6b0
+80
+65" ];
+N30[label="ualldisu
+d9e67f3540c48dc9e2455eb064f49acc021954e10ae32a670961e9d84e06e117
+39
+16" ];
+N31[label="kbaldassiv
+565bdd6efe50033476ad30d328e06511aabfe9ea7ef57b6514a5da723aa210af
+207209
+456" ];
+N32[label="pmussoliniw
+6cfed9e0040345ed710383e1b11d775472a5dade6dc0a4a12c05381396ded7df
+246
+8" ];
+N33[label="kblockeyx
+541cf64e47d14bc84d8bf1ff1edce604ecc575c3cfbc65dff9f2ec4e00aa4081
+9
+74" ];
+N34[label="gtilzeyy
+8d510ac1d1ac454f9d7c1c541491a63746cdcd84758d9e9e9077a88207f16aba
+8
+3" ];
+N35[label="dbushellz
+c8444b4b52b5ab25a4ff52dafa486b84f0003b12916ec22cad1d504dd3c810d5
+781217
+58" ];
+N36[label="cgoudman10
+7fe13c474dcd8d967ebb4a68dda727dbef6d95574b7df36044bbb539853912cc
+71
+650" ];
+N37[label="wdrinkhill11
+c2a6f7c42fd46bb02fe72c3b4629380a02ef23af1ae7428ff1964196b9b7094c
+6
+7" ];
+N38[label="gmazin12
+ccf856a5836297c39b5f3b7d192be35ff6a3c2df4c775a82a6cc7b8dd85f4827
+38418
+1" ];
+N39[label="mhertwell13
+b361531ac829a0af0cc2a48cd4d1422260d42390ac4f73e20d406e500e4c1b2e
+405
+31" ];
+N40[label="fcarik14
+d2c5973fb0b143e72aa950b0df749aed1bed8ad02893afba5c13116888aa68a3
+6
+4" ];
+N41[label="ndroogan15
+4785c166c64051a171636ab269bcfe7059bddc391abb047642adffdc3294cca5
+702
+388" ];
+N42[label="jglanvill16
+662b2e057724cf5fc91d8330d0a4ea94ad77088a42ba54dfc35e9453b5b27a37
+3
+697" ];
+N43[label="hblaby17
+d85e2182cc9638871d3b274e51ec9b07acefdb0776597c2fb6ee7c1c63992f23
+41
+465" ];
+N44[label="laloshkin18
+89878f08ddfbff35d2f529c93fa936176405d78aab9be819750dd783ea5e6994
+7
+10" ];
+N45[label="ascorer19
+0147dea9501c1d41592d19b4436382c4ce9966653392169b56c4059a5b546545
+49033
+6" ];
+N46[label="cmullally1a
+41fe564cf90682558b84f2b29e95a75f6223aea0ba73af9c048c3993093cf14b
+1607
+2" ];
+N47[label="btoward1b
+ff6302411e2f6d81730e5e60e44bb9d136a976eb6fe83259b7ab60bec6dc4129
+596294
+0" ];
+N48[label="gmintoff1c
+29e9aef32c5f8f5f9c0ed5ebdeb1ed731f49479d76cb6072cfe4c5a137fa6d9d
+9
+14" ];
+N49[label="aarmytage1d
+e2a38fbbfcc714283ed40a045d5d4250c2c6085c182d41b85a3231169d36572a
+477132
+600" ];
+N50[label="kboick1e
+667600e1764c52c550b9bb61331520b83cffffcb30881f61fa41fa812713e10c
+317
+60" ];
+N51[label="ayakuntzov1f
+68d776be7a2b154e0d3dace325e33e89c5fb577ea7ed15110b3252e5f73b4afa
+77
+2" ];
+N52[label="kneasham1g
+912414c0e622423f6a53ec1fc789cbb5c1dc1e65673018d20f89734ca53d404e
+2002
+9" ];
+N53[label="rscotchmoor1h
+1283284fd6d793d28ca5db6bbe77c8a4534adedd5db27e6bb55286d464398f66
+875739
+7" ];
+N54[label="zyankin1i
+3fdfe72cb5af4cce8e8e70bc7b077a12f2b742df9e16745a397bf842d37a0201
+407
+720" ];
+N55[label="svennart1j
+48ae78cc206e91020f0c078932fe420d2f727237637d355ca97a0ff3339e896d
+36067
+2" ];
+N56[label="ccanedo1k
+df4e5d6538ba34aeadf7d732fd57cfdd7fe2ff705efd354431da923129b61463
+8
+432" ];
+N57[label="awalbridge1l
+f9a42098cb6f96df1fe7357250ca069527df1e202141b3b8ad7914966cd9de69
+9901
+715" ];
+N58[label="ssheridan1m
+8a6a37e0b25d184f9052ebfa68843c09a448253a3e6e776c825c33acb2ca89c4
+74266
+3" ];
+N59[label="mmacnab1n
+5b32ef4ef879c24617ff04d6efec649ff49559f2416b5f656c006af777387639
+213319
+3" ];
+N60[label="mreskelly1o
+c0a2296e8ff10ace82a4b1eb5a78c26fdbc9289ce795457be07b49831b3a5c60
+695
+505" ];
+N61[label="zbromfield1p
+a1ea2dc85b5b87713d1a0e6029d9518c74584b78d1a714d7993e98851b2c1ffb
+3659
+75" ];
+N62[label="borring1q
+252272caf2da4ee170fbd4bc9a0561c853680da6e7ca03c4634e6369f6c9b0a7
+66034
+169" ];
+N63[label="pjozwik1r
+3419f68d28ac03b852cc9701c7578eedbd78d22d6e39ead41d6eec6501a7e698
+327521
+42" ];
+N64[label="bscotter1s
+0dbb77ef1db72c5d87a86ea365056aa492ec231f5f157e9804345fb97a57e7ad
+9589
+6" ];
+N65[label="jmeriot1t
+bd8e6aa79a9c3d870c3aa8193385aea6f07bace3b47697574fd961980abd9503
+71
+83" ];
+N66[label="bjanning1u
+e4b4bebbacf749d6c6ce53b5aefcd29b58534fe42082970fe1c6736c7941e670
+4891
+1" ];
+N67[label="arimour1v
+45f25d87e4da950e6b06149b726dc27cfb9cae7bff588bd0b689525961f15c48
+97240
+735" ];
+N68[label="ltwinbrow1w
+e6003c2dc4678e14821d71bf5eb846e054acaff95cd880249e2a4af229f3a55d
+28704
+5" ];
+N69[label="pstangroom1x
+f3b7db86de3866111ea7432c26749ce4d0f43708eaf00ed3bff538a80ed6e05f
+4573
+739" ];
+N70[label="rkoppens1y
+c43962a014e3c10769786d5f72952b3f818f6e05f22a0cf8dc7b15d23af53d5a
+5594
+41" ];
+N71[label="ddagless1z
+5cd1c1da5db9bc13e26de0bf6d9d4d442ebe90e9f0cc5f32968c9ecd3d8dde26
+7
+22" ];
+N72[label="afazzioli20
+45599c1dfc8e3b8057a056f2c879840795129fea3a0300da99cc6e20e144526e
+9318
+97" ];
+N73[label="mscammell21
+a6944422422317c393043c9179a4fcdefef0261962c3f676cdae0b26415575d6
+1
+8" ];
+N74[label="ppolk22
+1ba1b551fee1c9343739c8860845f76bd1e3ac5598414f278e2c022f1ce7bfaf
+133
+3" ];
+N75[label="yehlerding23
+adacdb49a3874fb6432786706362616fd1d21dc43d1cfe8448a8649a48d2d94b
+526592
+59" ];
+N76[label="mbeekmann24
+83b1546821f54dec8d0bc618ae5cf9d60ccf60b252097417c8b8afa1ecb07278
+861142
+3" ];
+N77[label="rfrome25
+9fc31f86ed96d08e9d62f075267e834a9d04653f1ae392b575dbff7af949fc66
+64669
+102" ];
+N78[label="pyoungman26
+d46a89fb53f9f86551a062321fdbdc371c2424b68360a34b2e7aa2044a67f9e5
+8
+67" ];
+N79[label="bbreakey27
+8677bd4a6d8b519a1549d4f9bff6509bb174c0707dd6a13c63f9303a6e9575ac
+60404
+88" ];
+N80[label="sgamett28
+4cde74d97f8f44c4b1dba6af57378744e2441b3f300c2561922fb6a67c4089de
+9
+231" ];
+N81[label="jchilds29
+45877e0abec6d9860ac378a87bf90c478b80044a33fbfec505a66274e4162cb3
+26
+5" ];
+N82[label="opinney2a
+dd563ef2b79225008ff5f8ca7de2a34ec7a180e47b8c48613e29653cf4e0d092
+208101
+1" ];
+N83[label="dbeefon2b
+cf8e9ed1e221728eb56fb7043df8a1101eb89a223d7fcbf9bbacab4ed65bad78
+9803
+0" ];
+N84[label="kstachini2c
+70e7cf28b1358cf92cfd17e4773c36895ee815e816fef31a8ea20daf262fd091
+606257
+99" ];
+N85[label="aminnette2d
+c993eda37b2dbd1c9e7727bc2cc518af37d08e62864ff49230574adcf91b71d5
+438
+70" ];
+N86[label="smyford2e
+ed7b48f13dbf7eded786f78a1bea39b7c6206c049e633de12d51ecf714b04336
+29
+11" ];
+N87[label="lelphick2f
+42c343bf83c6bec1054e2b563b55051c3bb86f1cbccbea00ac3a31c8cbdc8ae8
+87
+5" ];
+N88[label="sralphs2g
+bde105e4bbafd1f0b9a2eeeb5b81970a464152d1dc716aa4e6accdf96b49f3f8
+690
+138" ];
+N89[label="abenit2h
+525e11519d30b3077c9f569f5771ab2c7929712295be6f4219a5eb59eef9c474
+34787
+505" ];
+N90[label="hjellard2i
+7d14292d28fd6407d26c3d55eb96e89d16ac17b7f2864a6144cdf083b2b28420
+2
+7" ];
+N91[label="rdownton2j
+a4b14f13531d0d5177ba918ee83cc2700d377c61b8e3dff186ae5bf6aad32492
+4
+6" ];
+N92[label="gmintoff2k
+0d304b5db0a32d4a8fac93f23fbb6e3bbf36ea76c99820a840baf2577cbd639d
+5843
+24" ];
+N93[label="ltowle2l
+22ab3c4635da0f9b306e2981fa88f5ae528cb4aa6ad75a56ad0a913602017bdc
+306
+187" ];
+N94[label="kbrowning2m
+bc688a60c453f1e2919180d2de1d0a6a42d1c02a8f302b0bd1585877c0630205
+56
+16" ];
+N95[label="bthomen2n
+9143a64f386e0c6f7472e89b641afd6ba1d581cd0f1d21daabe94c6ab9127144
+1
+7" ];
+N96[label="tdangerfield2o
+9a60bfb7122e71330d7dd475188da0f41e66b2de037e54ef35fa2cbc03f97d7d
+6841
+73" ];
+N97[label="rcrippin2p
+7b710b2aa0308439b003bb7f3f0613e3784e0355f8efdffdcb054ddfdb4b8a5c
+87057
+494" ];
+N98[label="zlook2q
+911eeaca3018549d75852f21ce9965d9f1f7d164466e112fc02e83b6417c0493
+738492
+2" ];
+N99[label="hparlett2r
+e74234cc8ff17204abc54e4e26453a2e85d5bb30b937809a2c216989e811e3d4
+69
+8" ];
 
 //agregando conexiones o flechas
 {rank=same;
 N0->N1[dir=forward];
 N0->N1[dir=back];
-N1->N0[dir=forward];
-N1->N0[dir=back];
+N1->N2[dir=forward];
+N1->N2[dir=back];
+N2->N3[dir=forward];
+N2->N3[dir=back];
+N3->N4[dir=forward];
+N3->N4[dir=back];
+N4->N5[dir=forward];
+N4->N5[dir=back];
+N5->N6[dir=forward];
+N5->N6[dir=back];
+N6->N7[dir=forward];
+N6->N7[dir=back];
+N7->N8[dir=forward];
+N7->N8[dir=back];
+N8->N9[dir=forward];
+N8->N9[dir=back];
+N9->N10[dir=forward];
+N9->N10[dir=back];
+N10->N11[dir=forward];
+N10->N11[dir=back];
+N11->N12[dir=forward];
+N11->N12[dir=back];
+N12->N13[dir=forward];
+N12->N13[dir=back];
+N13->N14[dir=forward];
+N13->N14[dir=back];
+N14->N15[dir=forward];
+N14->N15[dir=back];
+N15->N16[dir=forward];
+N15->N16[dir=back];
+N16->N17[dir=forward];
+N16->N17[dir=back];
+N17->N18[dir=forward];
+N17->N18[dir=back];
+N18->N19[dir=forward];
+N18->N19[dir=back];
+N19->N20[dir=forward];
+N19->N20[dir=back];
+N20->N21[dir=forward];
+N20->N21[dir=back];
+N21->N22[dir=forward];
+N21->N22[dir=back];
+N22->N23[dir=forward];
+N22->N23[dir=back];
+N23->N24[dir=forward];
+N23->N24[dir=back];
+N24->N25[dir=forward];
+N24->N25[dir=back];
+N25->N26[dir=forward];
+N25->N26[dir=back];
+N26->N27[dir=forward];
+N26->N27[dir=back];
+N27->N28[dir=forward];
+N27->N28[dir=back];
+N28->N29[dir=forward];
+N28->N29[dir=back];
+N29->N30[dir=forward];
+N29->N30[dir=back];
+N30->N31[dir=forward];
+N30->N31[dir=back];
+N31->N32[dir=forward];
+N31->N32[dir=back];
+N32->N33[dir=forward];
+N32->N33[dir=back];
+N33->N34[dir=forward];
+N33->N34[dir=back];
+N34->N35[dir=forward];
+N34->N35[dir=back];
+N35->N36[dir=forward];
+N35->N36[dir=back];
+N36->N37[dir=forward];
+N36->N37[dir=back];
+N37->N38[dir=forward];
+N37->N38[dir=back];
+N38->N39[dir=forward];
+N38->N39[dir=back];
+N39->N40[dir=forward];
+N39->N40[dir=back];
+N40->N41[dir=forward];
+N40->N41[dir=back];
+N41->N42[dir=forward];
+N41->N42[dir=back];
+N42->N43[dir=forward];
+N42->N43[dir=back];
+N43->N44[dir=forward];
+N43->N44[dir=back];
+N44->N45[dir=forward];
+N44->N45[dir=back];
+N45->N46[dir=forward];
+N45->N46[dir=back];
+N46->N47[dir=forward];
+N46->N47[dir=back];
+N47->N48[dir=forward];
+N47->N48[dir=back];
+N48->N49[dir=forward];
+N48->N49[dir=back];
+N49->N50[dir=forward];
+N49->N50[dir=back];
+N50->N51[dir=forward];
+N50->N51[dir=back];
+N51->N52[dir=forward];
+N51->N52[dir=back];
+N52->N53[dir=forward];
+N52->N53[dir=back];
+N53->N54[dir=forward];
+N53->N54[dir=back];
+N54->N55[dir=forward];
+N54->N55[dir=back];
+N55->N56[dir=forward];
+N55->N56[dir=back];
+N56->N57[dir=forward];
+N56->N57[dir=back];
+N57->N58[dir=forward];
+N57->N58[dir=back];
+N58->N59[dir=forward];
+N58->N59[dir=back];
+N59->N60[dir=forward];
+N59->N60[dir=back];
+N60->N61[dir=forward];
+N60->N61[dir=back];
+N61->N62[dir=forward];
+N61->N62[dir=back];
+N62->N63[dir=forward];
+N62->N63[dir=back];
+N63->N64[dir=forward];
+N63->N64[dir=back];
+N64->N65[dir=forward];
+N64->N65[dir=back];
+N65->N66[dir=forward];
+N65->N66[dir=back];
+N66->N67[dir=forward];
+N66->N67[dir=back];
+N67->N68[dir=forward];
+N67->N68[dir=back];
+N68->N69[dir=forward];
+N68->N69[dir=back];
+N69->N70[dir=forward];
+N69->N70[dir=back];
+N70->N71[dir=forward];
+N70->N71[dir=back];
+N71->N72[dir=forward];
+N71->N72[dir=back];
+N72->N73[dir=forward];
+N72->N73[dir=back];
+N73->N74[dir=forward];
+N73->N74[dir=back];
+N74->N75[dir=forward];
+N74->N75[dir=back];
+N75->N76[dir=forward];
+N75->N76[dir=back];
+N76->N77[dir=forward];
+N76->N77[dir=back];
+N77->N78[dir=forward];
+N77->N78[dir=back];
+N78->N79[dir=forward];
+N78->N79[dir=back];
+N79->N80[dir=forward];
+N79->N80[dir=back];
+N80->N81[dir=forward];
+N80->N81[dir=back];
+N81->N82[dir=forward];
+N81->N82[dir=back];
+N82->N83[dir=forward];
+N82->N83[dir=back];
+N83->N84[dir=forward];
+N83->N84[dir=back];
+N84->N85[dir=forward];
+N84->N85[dir=back];
+N85->N86[dir=forward];
+N85->N86[dir=back];
+N86->N87[dir=forward];
+N86->N87[dir=back];
+N87->N88[dir=forward];
+N87->N88[dir=back];
+N88->N89[dir=forward];
+N88->N89[dir=back];
+N89->N90[dir=forward];
+N89->N90[dir=back];
+N90->N91[dir=forward];
+N90->N91[dir=back];
+N91->N92[dir=forward];
+N91->N92[dir=back];
+N92->N93[dir=forward];
+N92->N93[dir=back];
+N93->N94[dir=forward];
+N93->N94[dir=back];
+N94->N95[dir=forward];
+N94->N95[dir=back];
+N95->N96[dir=forward];
+N95->N96[dir=back];
+N96->N97[dir=forward];
+N96->N97[dir=back];
+N97->N98[dir=forward];
+N97->N98[dir=back];
+N98->N99[dir=forward];
+N98->N99[dir=back];
+N99->N0[dir=forward];
+N99->N0[dir=back];
 
 }
 }
