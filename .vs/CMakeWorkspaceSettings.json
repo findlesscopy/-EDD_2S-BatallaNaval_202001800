@@ -1,0 +1,4 @@
+{
+  "enableCMake": false,
+  "sourceDirectory": "-DCMAKE_TOOLCHAIN_FILE=C:/Users/José/Desktop/Proyecto EDD/Fase 2/vcpkg/scripts/buildsystems/vcpkg.cmake"
+}

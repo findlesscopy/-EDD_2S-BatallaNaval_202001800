@@ -1,6 +1,9 @@
-from Estructuras.Matriz_Dispersa import Matriz_Dispersa;
+from Matriz_Dispersa import MatrizDispersa
 
 def main():
-    matriz = Matriz_Dispersa()
+    matriz = MatrizDispersa()
+    matriz.insertar(1,1,"a")
+    matriz.graficarNeato("hola")
+
 if __name__ == "__main__":
     main()
