@@ -1,0 +1,36 @@
+digraph G {
+node[shape=record]
+		//Agregar Nodos Rama
+R0x26e4a706b40[label="<C1>|JAJA
+ JAJA
+ 4
+ 4|<C2>|RT
+ RT
+ 3
+ 3|<C3>"];
+R0x26e4a706a60[label="Adios
+ Adios
+ 8
+ 8|Hola
+ Hola
+ 1
+ 1"];
+R0x26e4a706de0[label="KIKI
+ KIKI
+ 4
+ 4|LALALALA
+ LALALALA
+ 3
+ 3"];
+R0x26e4a706f30[label="TTTT
+ TTTT
+ 1
+ 1|YY
+ YY
+ 8
+ 8"];
+		//Agregar conexiones
+R0x26e4a706b40:C1->R0x26e4a706a60;
+R0x26e4a706b40:C2->R0x26e4a706de0;
+R0x26e4a706b40:C3->R0x26e4a706f30;
+}
