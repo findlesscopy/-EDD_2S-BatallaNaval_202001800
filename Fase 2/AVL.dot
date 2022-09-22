@@ -1,17 +1,33 @@
 digraph G{label = "Arbol AVL" fontname="Arial Black" fontsize="25pt";
 node [shape = box, style=filled, fillcolor=seashell2];
-nodo4[ label = "45asd654ad654"];
-nodo1[ label = "25"];
-nodo7[ label = "123789adj"];
+nodo4[ label = "45asd654ad654
+a
+0"];
+nodo1[ label = "25
+hola
+2"];
+nodo7[ label = "123789adj
+r7777
+222"];
 nodo1:C0->nodo7
-nodo2[ label = "45"];
+nodo2[ label = "45
+adios
+58"];
 nodo1:C1->nodo2
 nodo4:C0->nodo1
-nodo3[ label = "7777asd"];
-nodo6[ label = "465654asdasasd"];
+nodo3[ label = "7777asd
+kk
+96"];
+nodo6[ label = "465654asdasasd
+kru
+7777"];
 nodo3:C0->nodo6
-nodo5[ label = "798qwe798"];
-nodo8[ label = "wrwwww43224"];
+nodo5[ label = "798qwe798
+ttttttttt
+88"];
+nodo8[ label = "wrwwww43224
+y
+50"];
 nodo5:C1->nodo8
 nodo3:C1->nodo5
 nodo4:C1->nodo3

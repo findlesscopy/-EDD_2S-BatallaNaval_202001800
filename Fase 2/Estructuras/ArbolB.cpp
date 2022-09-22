@@ -81,7 +81,7 @@ void ArbolB::insertar(Usuario usuario) {
     } else {
         pair < NodoB*, pair<bool, bool>> ret = insertarCrearRama(nodo, raiz);
         NodoB* obj = ret.first;
-        if ((ret.second.first or ret.second.second) and obj != NULL) {//si se divide la rama o se inserta al inicio, la raiz cambia
+        if ((ret.second.first || ret.second.second) && obj != NULL) {//si se divide la rama o se inserta al inicio, la raiz cambia
             cout << "se cambia de rama principal ID:" << obj->usuario.nick << "\n";
             raiz = obj;
         }
@@ -124,7 +124,7 @@ pair<NodoB*, pair<bool, bool>> ArbolB::insertarCrearRama(NodoB* nodo, NodoB* ram
                 return ResultadoRama;
             } else if (nodo->usuario.nick < temp->usuario.nick) {
                 pair < NodoB*, pair<bool, bool>> ResultadoInsert = insertarCrearRama(nodo, temp->izquierda);
-                if (ResultadoInsert.second.second and ResultadoInsert.first != NULL) {//si se modifico el inicio de la rama
+                if (ResultadoInsert.second.second && ResultadoInsert.first != NULL) {//si se modifico el inicio de la rama
                     ResultadoRama.second.second = true;
                     temp->izquierda = ResultadoInsert.first;
                 }
@@ -142,7 +142,7 @@ pair<NodoB*, pair<bool, bool>> ArbolB::insertarCrearRama(NodoB* nodo, NodoB* ram
                 return ResultadoRama;
             } else if (temp->siguiente == NULL) {
                 pair < NodoB*, pair<bool, bool>> ResultadoInsert = insertarCrearRama(nodo, temp->derecha);
-                if (ResultadoInsert.second.second and ResultadoInsert.first != NULL) {//si se modifico el inicio de la rama
+                if (ResultadoInsert.second.second && ResultadoInsert.first != NULL) {//si se modifico el inicio de la rama
                     ResultadoRama.second.second = true;
                     temp->derecha = ResultadoInsert.first;
                 }
@@ -264,7 +264,7 @@ bool ArbolB::esHoja(NodoB* primero) {
     NodoB* aux = primero;
     while (aux != NULL) {
         cout << "[" << aux->usuario.nick << "]->";
-        if (aux->izquierda != NULL or aux->derecha != NULL) {
+        if (aux->izquierda != NULL || aux->derecha != NULL) {
             return false;
         }
         aux = aux->siguiente;

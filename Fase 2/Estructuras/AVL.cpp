@@ -175,9 +175,9 @@ string AVL::getCodigoInterno(NodoAVL* nodo){
     string codigodot = "";
         
     if((nodo->izquierda== NULL) && (nodo->derecha == NULL)){
-        codigodot += "nodo" + std::to_string(nodo->id)+ "[ label = \""+ nodo->compra.idCompra +"\""+ "];\n";
+        codigodot += "nodo" + std::to_string(nodo->id)+ "[ label = \""+ nodo->compra.idCompra +"\n"+ nodo->compra.nombre +"\n"+ to_string(nodo->compra.cantidad)+"\""+ "];\n";
     }else{
-        codigodot += "nodo" +std::to_string(nodo->id)+"[ label = \""+ nodo->compra.idCompra +"\""+"];\n";
+        codigodot += "nodo" +std::to_string(nodo->id)+"[ label = \""+  nodo->compra.idCompra +"\n"+ nodo->compra.nombre +"\n"+ to_string(nodo->compra.cantidad)+"\""+"];\n";
     }
     if(nodo->izquierda!=NULL){
         codigodot+= getCodigoInterno(nodo->izquierda) +"nodo"+std::to_string(nodo->id) + ":C0->nodo" + std::to_string(nodo->izquierda->id)+"\n";
