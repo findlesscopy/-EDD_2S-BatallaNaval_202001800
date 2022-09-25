@@ -1,4 +1,4 @@
-from Nodo_Cabecera import Nodo_Cabecera
+from Estructuras.Nodo_Cabecera import Nodo_Cabecera
 
 class Lista_Cabecera():
     def __init__(self, tipo):

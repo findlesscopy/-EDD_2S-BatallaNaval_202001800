@@ -1,6 +1,6 @@
-from Nodo_Cabecera import Nodo_Cabecera
-from Lista_Cabecera import Lista_Cabecera
-from Nodo_Celda import Nodo_Celda
+from Estructuras.Nodo_Cabecera import Nodo_Cabecera
+from Estructuras.Lista_Cabecera import Lista_Cabecera
+from Estructuras.Nodo_Celda import Nodo_Celda
 import os
 import webbrowser
 
