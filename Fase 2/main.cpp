@@ -12,7 +12,7 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-    /*
+    
     Usuario user;
     ArbolB pruebas;
     user = Usuario("Hola","Hola",1,1);
@@ -51,8 +51,8 @@ int main(int argc, char** argv) {
     //        pruebas.insertar(17);
    
     pruebas.Grafo();
-*/
-    
+
+    /*
     Compra compra;
 
 
@@ -75,6 +75,6 @@ int main(int argc, char** argv) {
     pruebas.insertar(compra);
 
     pruebas.graficar();
-    
+    */
     return 0;
 }

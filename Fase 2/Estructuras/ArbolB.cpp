@@ -6,6 +6,7 @@
 #include <string>
 #include <sstream>
 
+
 using namespace std;
 
 class Usuario{
@@ -54,7 +55,7 @@ private:
 
 class ArbolB {
 public:
-    int orden_arbol = 5;
+    int orden_arbol = 4;
     NodoB* raiz;
 
     ArbolB() {

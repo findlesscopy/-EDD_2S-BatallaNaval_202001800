@@ -1,9 +1,8 @@
-from Matriz_Dispersa import MatrizDispersa
+from screens.Login import Login
+from screens.Admin import Admin
+from screens.Usuario import Usuario
+from screens.Perfil import Perfil
 
-def main():
-    matriz = MatrizDispersa()
-    matriz.insertar(1,1,"a")
-    matriz.graficarNeato("hola")
-
-if __name__ == "__main__":
-    main()
+#Login()
+#Usuario("Hola")
+Perfil("Hola")
