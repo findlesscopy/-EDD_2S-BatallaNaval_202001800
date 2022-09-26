@@ -1,80 +1,81 @@
-#include <cstdlib>
-
-#include "Estructuras/ArbolB.cpp"
-#include "Estructuras/AVL.cpp"
-#include <windows.h> 
-#include <fstream>
+#include "./glove/glovehttpserver.hpp"
+#include <iostream>
+#include <chrono>
+#include <thread>
 #include <string>
-#include <sstream>
-using namespace std;
+#include <vector>
+#include "./glove/json.hpp"
+#include "Estructuras/ListaSimple.cpp"
 
-/*
- * 
- */
-int main(int argc, char** argv) {
-    
-    Usuario user;
-    ArbolB pruebas;
-    user = Usuario("Hola","Hola",1,1);
-    pruebas.insertar(user);
-    user = Usuario("Adios","Adios",8,8);
-    pruebas.insertar(user);
-    user = Usuario("JAJA","JAJA",4,4);
-    pruebas.insertar(user);
-    user = Usuario("LALALALA","LALALALA",3,3);
-    pruebas.insertar(user);
-    
-    user = Usuario("TTTT","TTTT",1,1);
-    pruebas.insertar(user);
-    user = Usuario("YY","YY",8,8);
-    pruebas.insertar(user);
-    user = Usuario("KIKI","KIKI",4,4);
-    pruebas.insertar(user);
-    user = Usuario("RT","RT",3,3);
-    pruebas.insertar(user);
-    //        pruebas.insertar(1);
-    //        pruebas.insertar(2);
-    //        pruebas.insertar(3);
-    //        pruebas.insertar(4);
-    //        pruebas.insertar(5);
-    //        pruebas.insertar(6);
-    //        pruebas.insertar(7);
-    //        pruebas.insertar(8);
-    //        pruebas.insertar(9);
-    //        pruebas.insertar(10);
-    //        pruebas.insertar(11);
-    //        pruebas.insertar(12);
-    //        pruebas.insertar(13);
-    //        pruebas.insertar(14);
-    //        pruebas.insertar(15);
-    //        pruebas.insertar(16);
-    //        pruebas.insertar(17);
-   
-    pruebas.Grafo();
+int atoi(std::string s)
+{
+    try
+    {
+        return std::stod(s);
+    }
+    catch (std::exception &e)
+    {
+        return 0;
+    }
+}
 
-    /*
-    Compra compra;
+static std::string jsonkv(std::string k, std::string v)
+{
+    /* "k": "v" */
+    return "\"" + k + "\": \"" + v + "\"";
+}
 
+class Servidor
+{
+public:
+    Servidor()
+    {
+        pruebas.InsertarEnOrden(100);
+        pruebas.InsertarEnOrden(300);
+        pruebas.InsertarEnOrden(200);
+    }
 
-    AVL pruebas;
-    compra = Compra("25","hola",2);
-    pruebas.insertar(compra);
-    compra = Compra("45","adios",58);
-    pruebas.insertar(compra);
-    compra = Compra("7777asd","kk",96);
-    pruebas.insertar(compra);
-    compra = Compra("45asd654ad654","a",0);
-    pruebas.insertar(compra);
-    compra = Compra("798qwe798","ttttttttt",88);
-    pruebas.insertar(compra);
-    compra = Compra("465654asdasasd","kru",7777);
-    pruebas.insertar(compra);
-    compra = Compra("123789adj","r7777",222);
-    pruebas.insertar(compra);
-    compra = Compra("wrwwww43224","y",50);
-    pruebas.insertar(compra);
+    void get(GloveHttpRequest &request, GloveHttpResponse &response)
+    {
+        response.contentType("text/json");
+        if (request.special["Id"].empty())
+            response << pruebas.getDatos();
+        else
+        {
+            response << "{ "
+                     << jsonkv("status", "ok") << ",\n"
+                     << jsonkv("Id_buscado", pruebas.Buscar(atoi(request.special["Id"]))) << " }";
+        }
+    }
 
-    pruebas.graficar();
-    */
-    return 0;
+    void post(GloveHttpRequest &request, GloveHttpResponse &response)
+    {
+        pruebas.InsertarEnOrden(atoi(request.special["Id"]));
+        response << "{ "
+                 << jsonkv("status", "ok") << ",\n"
+                 << jsonkv("Id_nuevo", request.special["Id"]) << " }";
+    }
+
+private:
+    ListaSimple pruebas;
+};
+
+int main(int argc, char *argv[])
+{
+    Servidor cine;
+
+    GloveHttpServer serv(8080, "", 2048);
+    serv.compression("gzip, deflate");
+    namespace ph = std::placeholders;
+    serv.addRest("/Lista/$Id", 1,
+                 GloveHttpServer::jsonApiErrorCall,
+                 std::bind(&Servidor::get, &cine, ph::_1, ph::_2),
+                 std::bind(&Servidor::post, &cine, ph::_1, ph::_2));
+    std::cout << "Servidor en Ejecucion" << std::endl;
+    while (1)
+    {
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+    }
+
+    std::cout << "TEST" << std::endl;
 }

@@ -10,4 +10,4 @@ from Estructuras.MatrizDispersa import MatrizDispersa
 #Perfil("Hola")
 matriz = MatrizDispersa()
 matriz.insertar(1,1,"A")
-matriz.graficarNeato()
+matriz.graficarNeato("A")
