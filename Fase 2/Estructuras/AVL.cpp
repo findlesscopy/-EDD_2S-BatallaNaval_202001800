@@ -1,7 +1,6 @@
 #include <stddef.h>
 #include <iostream>
 #include <algorithm>
-#include <windows.h> 
 #include <fstream>
 #include <string>
 #include <sstream>

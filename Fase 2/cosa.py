@@ -1,0 +1,1 @@
+{ 'title' : 'The Great Wall', 'director': 'Yimou Zhang', 'stars' : 'Pedro Pascal, Matt Damon, Willem Dafoe', 'duration': 120 }

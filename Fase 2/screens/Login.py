@@ -3,7 +3,8 @@ from tkinter import ttk, messagebox
 from tkinter.font import BOLD
 import util.generic as utl
 from screens.Admin import Admin
-
+from screens.Perfil import Perfil
+from Cliente import getLogin
 
 class Login:
 
@@ -12,7 +13,12 @@ class Login:
         password = self.password.get()
         if(username == "EDD" and password == "edd123"):
             self.ventana.destroy()
-            Admin(username)
+            Admin()
+        elif(username != "EDD" and password !="edd123"):
+            respuesta = getLogin(username,password)
+            if(respuesta == "Si"):
+                self.ventana.destroy()
+                Perfil(username)
         else:
             messagebox.showerror(message="Invalid username or password", title="Error")
 

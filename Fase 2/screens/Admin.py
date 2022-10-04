@@ -2,17 +2,23 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from tkinter.font import BOLD
 import util.generic as utl
+from helpers.helpers import Cargar_Archivos
 
 class Admin:
     
     def registrar_datos(self):
-        pass
+        Cargar_Archivos()
+
 
     def ver_lista(self):
         pass
 
     def ver_arbolB(self):
         pass
+
+    def regresar(self):
+        self.ventana.destroy()
+        
 
     def __init__(self):        
         self.ventana = tk.Tk()
@@ -55,4 +61,7 @@ class Admin:
         btn_ver_arbol.pack(padx=20, pady=20)
         btn_ver_arbol.bind("<Return>", (lambda event: self.ver_arbolB()))
 
+        btn_salir = tk.Button(frame_form_fill, text="Cerrar Sesión", font=('Optima', 15), bg='#E64D2C', bd=0, fg="#fff", command=self.regresar)
+        btn_salir.pack(padx=20, pady=20)
+        btn_salir.bind("<Return>", (lambda event: self.regresar()))
         self.ventana.mainloop()

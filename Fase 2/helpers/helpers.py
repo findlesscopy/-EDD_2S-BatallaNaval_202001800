@@ -1,7 +1,10 @@
+from re import I
 from tkinter import *
 from tkinter import filedialog
 from tkinter.filedialog import askopenfilename
 import json
+from Cliente import postDatos
+
 
 def Lector_Archivos():
     Tk().withdraw()
@@ -11,17 +14,6 @@ def Lector_Archivos():
 
 def Cargar_Archivos():
     with open(Lector_Archivos()) as contenido:
-        data = json.load(contenido)
-
-        for usuarios in data['usuarios']:
-            print(usuarios)
-
-        for articulos in data['articulos']:
-            print(articulos)
-
-        for movimientos in data['tutorial']['movimientos']:
-            print(movimientos)
-        #print(lista)
-
-if __name__ == "__main__":
-    Cargar_Archivos()
+        datos = json.load(contenido)
+        postDatos(datos)
+        #print(datos)

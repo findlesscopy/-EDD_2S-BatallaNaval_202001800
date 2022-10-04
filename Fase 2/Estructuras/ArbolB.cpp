@@ -1,7 +1,6 @@
 #include <stddef.h>
 #include <iostream>
 #include <algorithm>
-#include <windows.h> 
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -9,27 +8,6 @@
 
 using namespace std;
 
-class Usuario{
-    
-    public:
-        string nick;
-        string password;
-        int monedas;
-        int edad;
-        Usuario(string,string,int,int);
-        Usuario() = default;
-        ~Usuario();
-};
-
-Usuario::Usuario(string _nick, string _password, int _monedas, int _edad){
-    nick = _nick;
-    password = _password;
-    monedas = _monedas;
-    edad = _edad;
-}
-Usuario::~Usuario(){
-
-}
 
 class NodoB {
 public:
@@ -55,7 +33,7 @@ private:
 
 class ArbolB {
 public:
-    int orden_arbol = 4;
+    int orden_arbol = 5;
     NodoB* raiz;
 
     ArbolB() {
@@ -83,7 +61,7 @@ void ArbolB::insertar(Usuario usuario) {
         pair < NodoB*, pair<bool, bool>> ret = insertarCrearRama(nodo, raiz);
         NodoB* obj = ret.first;
         if ((ret.second.first || ret.second.second) && obj != NULL) {//si se divide la rama o se inserta al inicio, la raiz cambia
-            cout << "se cambia de rama principal ID:" << obj->usuario.nick << "\n";
+            cout << "se cambia de rama principal ID:" << obj->usuario.id << "\n";
             raiz = obj;
         }
     }
@@ -120,10 +98,10 @@ pair<NodoB*, pair<bool, bool>> ArbolB::insertarCrearRama(NodoB* nodo, NodoB* ram
     } else {//si el nodo es rama se debe buscar la posicion donde insertarlo
         NodoB*temp = rama;
         do {
-            if (nodo->usuario.nick == temp->usuario.nick) {//valor ya insertado, no se permiten repeditos
-                cout << "insertarCrearRama(), El ID " << nodo->usuario.nick << " ya existe\n";
+            if (nodo->usuario.id == temp->usuario.id) {//valor ya insertado, no se permiten repeditos
+                cout << "insertarCrearRama(), El ID " << nodo->usuario.id << " ya existe\n";
                 return ResultadoRama;
-            } else if (nodo->usuario.nick < temp->usuario.nick) {
+            } else if (nodo->usuario.id < temp->usuario.id) {
                 pair < NodoB*, pair<bool, bool>> ResultadoInsert = insertarCrearRama(nodo, temp->izquierda);
                 if (ResultadoInsert.second.second && ResultadoInsert.first != NULL) {//si se modifico el inicio de la rama
                     ResultadoRama.second.second = true;
@@ -167,7 +145,7 @@ pair<NodoB*, pair<bool, bool>> ArbolB::insertarCrearRama(NodoB* nodo, NodoB* ram
 }
 
 NodoB* ArbolB::dividir(NodoB* rama) {
-    Usuario val = Usuario("","",-1,-1);
+    Usuario val = Usuario(-1,"","",-1,-1);
     NodoB*temp = NULL;
     NodoB*Nuevito = NULL;
     NodoB*aux = rama;
@@ -180,7 +158,7 @@ NodoB* ArbolB::dividir(NodoB* rama) {
         cont++;
         //implementacion para dividir unicamente ramas de 4 nodos
         if (cont < 3) {
-            val = Usuario(aux->usuario.nick,aux->usuario.password,aux->usuario.monedas,aux->usuario.edad);
+            val = Usuario(aux->usuario.id,aux->usuario.nick,aux->usuario.password,aux->usuario.monedas,aux->usuario.edad);
             temp = new NodoB(val);
             temp->izquierda = aux->izquierda;
             if (cont == 2) {
@@ -190,10 +168,10 @@ NodoB* ArbolB::dividir(NodoB* rama) {
             }
             rizquierda = insertarEnRama(rizquierda, temp).first;
         } else if (cont == 3) {
-            val = Usuario(aux->usuario.nick,aux->usuario.password,aux->usuario.monedas,aux->usuario.edad);
+            val = Usuario(aux->usuario.id,aux->usuario.nick,aux->usuario.password,aux->usuario.monedas,aux->usuario.edad);
             Nuevito = new NodoB(val);
         } else {
-            val = Usuario(aux->usuario.nick,aux->usuario.password,aux->usuario.monedas,aux->usuario.edad);;
+            val = Usuario(aux->usuario.id,aux->usuario.nick,aux->usuario.password,aux->usuario.monedas,aux->usuario.edad);;
             temp = new NodoB(val);
             temp->izquierda = aux->izquierda;
             temp->derecha = aux->derecha;
@@ -217,11 +195,11 @@ pair<NodoB*, bool> ArbolB::insertarEnRama(NodoB* primero, NodoB* nuevo) {
         //recorrer e insertar
         NodoB* aux = primero;
         while (aux != NULL) {
-            if (aux->usuario.nick == nuevo->usuario.nick) {//------------->ya existe en el arbol
-                cout << "insertarEnRama(), El ID " << nuevo->usuario.nick << " ya existe\n";
+            if (aux->usuario.id == nuevo->usuario.id) {//------------->ya existe en el arbol
+                cout << "insertarEnRama(), El ID " << nuevo->usuario.id << " ya existe\n";
                 break;
             } else {
-                if (aux->usuario.nick > nuevo->usuario.nick) {//------------->) {
+                if (aux->usuario.id > nuevo->usuario.id) {//------------->) {
                     if (aux == primero) {//------------->insertar al inicio
                         aux->anterior = nuevo;
                         nuevo->siguiente = aux;
@@ -264,7 +242,7 @@ pair<NodoB*, bool> ArbolB::insertarEnRama(NodoB* primero, NodoB* nuevo) {
 bool ArbolB::esHoja(NodoB* primero) {
     NodoB* aux = primero;
     while (aux != NULL) {
-        cout << "[" << aux->usuario.nick << "]->";
+        cout << "[" << aux->usuario.id << "]->";
         if (aux->izquierda != NULL || aux->derecha != NULL) {
             return false;
         }
@@ -353,9 +331,9 @@ string ArbolB::GrafoRamas(NodoB*rama) {
                 r++;
             }
             if (aux->siguiente != NULL) {
-                dot = dot + aux->usuario.nick + "\n " +aux->usuario.password + "\n " + to_string(aux->usuario.monedas) + "\n " + to_string(aux->usuario.edad) +"|";
+                dot = dot + to_string(aux->usuario.id) +"\n "+ aux->usuario.nick + "\n " +aux->usuario.password + "\n " + to_string(aux->usuario.monedas) + "\n " + to_string(aux->usuario.edad) +"|";
             } else {
-                dot = dot + aux->usuario.nick + "\n " +aux->usuario.password + "\n " + to_string(aux->usuario.monedas) + "\n " + to_string(aux->usuario.edad);
+                dot = dot + to_string(aux->usuario.id) +"\n "+ aux->usuario.nick + "\n " +aux->usuario.password + "\n " + to_string(aux->usuario.monedas) + "\n " + to_string(aux->usuario.edad);
                 if (aux->derecha != NULL) {
                     dot = dot + "|<C" + to_string(r) + ">";
                 }

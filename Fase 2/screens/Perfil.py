@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from tkinter.font import BOLD
 import util.generic as utl
-from screens.Admin import Admin
 
 
 class Perfil:

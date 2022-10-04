@@ -1,26 +1,25 @@
 #include <iostream>
 #include <cstdlib>
-#include <windows.h> 
 #include <fstream>
 #include <string>
 #include <sstream>
-
-
 using namespace std;
 
 class Usuario{
     
     public:
+        int id;
         string nick;
         string password;
         int monedas;
         int edad;
-        Usuario(string,string,int,int);
+        Usuario(int,string,string,int,int);
         Usuario() = default;
         ~Usuario();
 };
 
-Usuario::Usuario(string _nick, string _password, int _monedas, int _edad){
+Usuario::Usuario(int _id, string _nick, string _password, int _monedas, int _edad){
+    id = _id;
     nick = _nick;
     password = _password;
     monedas = _monedas;
@@ -53,8 +52,8 @@ public:
         size = 0;
     }
     void Insertar(Usuario usuario);
-    void ImprimirIF();
-    void ImprimirFI();
+    string ImprimirIF();
+    string ImprimirFI();
     void Ordenar();
     bool BuscarUsuario(string nick);
     bool BuscarUsuarioLogin(string nick, string password);
@@ -93,33 +92,51 @@ void ListaDobleCircular::Insertar(Usuario usuario) {
     }
 }
 
-void ListaDobleCircular::ImprimirIF() {
+string ListaDobleCircular::ImprimirIF() {
+    
+    if(primero == NULL)
+        return "[\n]";
+
     NodoCircular*aux = primero;
-    cout<<"Nick"<<" "<<"Password"<<" "<<"Monedas"<<" "<<"Edad"<< "\n";
+    string salida = "";
     while (aux != NULL) {
-        cout<< aux->usuario.nick<<" "<<aux->usuario.password<<" "<<aux->usuario.monedas<<" "<<aux->usuario.edad << "\n";
+        
+        salida += "{\"id\": \""+ to_string(aux->usuario.id)+"\",\"nick\": \""+ aux->usuario.nick+"\",\"monedas\": \""+ to_string(aux->usuario.monedas)+"\",\"edad\": \""+ to_string(aux->usuario.edad)+"\"}";
         aux = aux->siguiente;
-        if(aux == primero){
-            break;
+        if(aux != primero){
+            salida += ",\n";
         }
+        if(aux == primero)
+            break;
+        
     }
+    return "[\n "+ salida + "\n]";
 }
 
-void ListaDobleCircular::ImprimirFI() {
+string ListaDobleCircular::ImprimirFI() {
+    if(primero == NULL)
+        return "[\n]";
+
     NodoCircular*aux = ultimo;
-    cout<<"Nick"<<" "<<"Password"<<" "<<"Monedas"<<" "<<"Edad"<< "\n";
+    string salida = "";
     while (aux != NULL) {
-        cout<< aux->usuario.nick<<" "<<aux->usuario.password<<" "<<aux->usuario.monedas<<" "<<aux->usuario.edad << "\n";
-        aux = aux->anterior;
-        if(aux == ultimo){
-            break;
+        
+        salida += "{\"id\": \""+ to_string(aux->usuario.id)+"\",\"nick\": \""+ aux->usuario.nick+"\",\"monedas\": \""+ to_string(aux->usuario.monedas)+"\",\"edad\": \""+ to_string(aux->usuario.edad)+"\"}";
+        aux = aux->siguiente;
+        if(aux != ultimo){
+            salida += ",\n";
         }
+        if(aux == ultimo)
+            break;
+        
     }
+    return "[\n "+ salida + "\n]";
+    
 }
 
 void ListaDobleCircular::Ordenar() {
     NodoCircular*s,*t;
-    int v, i;
+    int v, i,vvvvv;
     float vv;
     string vvv,vvvv;
     if(primero == ultimo && primero == NULL){
@@ -131,11 +148,14 @@ void ListaDobleCircular::Ordenar() {
         t = s->siguiente;
         while (t !=primero){
             if(s->usuario.edad > t->usuario.edad){
+                vvvvv = s->usuario.id;
                 v = s->usuario.edad;
                 vv =s->usuario.monedas;
                 vvv = s->usuario.nick;
                 vvvv = s->usuario.password;
+                
                 s->usuario = t->usuario;
+                t->usuario.id = vvvvv;
                 t->usuario.edad = v;
                 t->usuario.monedas = vv;
                 t->usuario.nick = vvv;
@@ -245,7 +265,8 @@ void ListaDobleCircular::Editar(string nick, string password) {
     NodoCircular*actual = new NodoCircular();
     actual = primero;
     bool encontrado = false;
-    string nuevo_nick, nueva_password;
+    string nuevo_nick;
+    char nueva_password[100];
     int nueva_edad;
     if(primero!=NULL){
         do{
@@ -257,21 +278,15 @@ void ListaDobleCircular::Editar(string nick, string password) {
                 actual->usuario.nick = nuevo_nick;
                 cout<<"\nIngrese nuevo dato para password"<<endl;
                 cin >> nueva_password;
-                SHA256 sha;
-                sha.update(nueva_password);
-                uint8_t * digest = sha.digest();
-
-                //std::cout << SHA256::toString(digest) << std::endl;
-
+                string password_encriptada = SHA256(nueva_password);
                 
-                actual->usuario.password = SHA256::toString(digest);
+                actual->usuario.password = password_encriptada;
                 cout<<"\nIngrese nuevo dato para edad"<<endl;
                 cin >> nueva_edad;
                 actual->usuario.edad = nueva_edad;
 
                 cout<<"\nDatos modificados correctamente"<<endl;
                 encontrado = true;
-                delete[] digest; // Don't forget to free the digest!
             }
             actual = actual->siguiente;
         }while(actual != primero && encontrado != true);
@@ -291,7 +306,7 @@ void ListaDobleCircular::GenerarGrafo() {
     string nodos = "";
     int numnodo = 0;
     while(tmp!= NULL){
-        nodos += "N"+std::to_string(numnodo)+"[label=\""+tmp->usuario.nick+"\n"+tmp->usuario.password+"\n"+std::to_string(tmp->usuario.monedas)+"\n"+std::to_string(tmp->usuario.edad) + + +"\" ];\n";
+        nodos += "N"+std::to_string(numnodo)+"[label=\""+std::to_string(tmp->usuario.id)+"\n"+tmp->usuario.nick+"\n"+tmp->usuario.password+"\n"+std::to_string(tmp->usuario.monedas)+"\n"+std::to_string(tmp->usuario.edad) + + +"\" ];\n";
         int auxnum = numnodo +1;
         tmp = tmp->siguiente;
         if(tmp == primero){

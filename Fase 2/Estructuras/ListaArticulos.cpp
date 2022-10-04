@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstdlib>
-#include <windows.h> 
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -53,8 +52,8 @@ public:
         size = 0;
     }
     void InsertarArticulo(Articulo articulo);
-    void ImprimirIFArticulo();
-    void ImprimirFIArticulo();
+    string ImprimirIFArticulo();
+    string ImprimirFIArticulo();
     void OrdenarArticulos();
 private:
 };
@@ -110,28 +109,42 @@ void ListaArticulos::OrdenarArticulos() {
     cout << ("Lista Ordenada\n");
 }
 
-void ListaArticulos::ImprimirIFArticulo() {
+string ListaArticulos::ImprimirIFArticulo() {
+    if(primero == NULL)
+        return "[\n]";
+
     NodoArticulo*aux = primero;
-    cout<<"ID"<<" "<<"Categoria"<<" "<<"Precio"<<" "<<"Nombre"<<" "<<"src"<< "\n";
+    string salida = "";
     while (aux != NULL) {
-        cout << aux->articulo.id<<" "<<aux->articulo.categoria<<" "<<aux->articulo.precio<<" "<<aux->articulo.nombre<<" "<<aux->articulo.src<< "\n";
+        
+        salida += "{\"id\": \""+ aux->articulo.id+"\",\"categoria\": \""+ aux->articulo.categoria+"\",\"precio\": \""+ to_string(aux->articulo.precio)+"\",\"nombre\": \""+ aux->articulo.nombre+"\",\"src\": \""+ aux->articulo.src+"\"}";
         aux = aux->siguiente;
-        if(aux == primero){
-            break;
+        if(aux != primero){
+            salida += ",\n";
         }
+        if(aux == primero)
+            break;
+        
     }
-    //cout << ("Primero");
-    //cout << (size);
+    return "{\n "+ salida + "\n}";
 }
 
-void ListaArticulos::ImprimirFIArticulo() {
+string ListaArticulos::ImprimirFIArticulo() {
+    if(primero == NULL)
+        return "[\n]";
+
     NodoArticulo*aux = ultimo;
-    cout<<"ID"<<" "<<"Categoria"<<" "<<"Precio"<<" "<<"Nombre"<<" "<<"src"<< "\n";
+    string salida = " \n \"articulos\":[";
     while (aux != NULL) {
-        cout <<aux->articulo.id<<" "<<aux->articulo.categoria<<" "<<aux->articulo.precio<<" "<<aux->articulo.nombre<<" "<<aux->articulo.src<< "\n";
-        aux = aux->anterior;
-        if(aux == ultimo){
-            break;
+        
+        salida += "{\"id\": \""+ aux->articulo.id+"\",\"categoria\": \""+ aux->articulo.categoria+"\",\"precio\": \""+ to_string(aux->articulo.precio)+"\",\"nombre\": \""+ aux->articulo.nombre+"\",\"src\": \""+ aux->articulo.src+"\"}";
+        aux = aux->siguiente;
+        if(aux != ultimo){
+            salida += ",\n";
         }
+        if(aux == ultimo)
+            break;
+        
     }
+    return "{\n "+ salida + "]\n}";
 }

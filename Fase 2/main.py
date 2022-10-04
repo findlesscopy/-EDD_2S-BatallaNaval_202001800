@@ -1,13 +1,15 @@
-from screens.Login import Login
-from screens.Admin import Admin
-from screens.Usuario import Usuario
-from screens.Perfil import Perfil
-
+from screens.Interfaz import Login, Listado, Admin, Tienda
 from Estructuras.MatrizDispersa import MatrizDispersa
 
 #Login()
+#Admin()
 #Usuario("Hola")
 #Perfil("Hola")
 #matriz = MatrizDispersa()
 #matriz.insertar(1,1,"A")
 #matriz.graficarNeato("A")
+
+
+if __name__ == '__main__':
+    Tienda("David")
+    
